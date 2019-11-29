@@ -1,37 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a436864e-f663-4756-8d39-351b36e988a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_4_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/web/model/User.java" afterDir="false" />
+    <list default="true" id="a436864e-f663-4756-8d39-351b36e988a0" name="Default Changelist" comment="Přidání repositories, services a entit">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/englingo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/englingo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/web/Controller1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/web/model/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/web/model/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/web/model/Lecture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/web/model/Lecture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/web/model/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/web/model/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/web/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/web/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/web/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/web/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app_englingo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/app_englingo.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/web/Controller1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/web/model/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/web/model/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/web/model/Lecture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/web/model/Lecture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/web/model/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/web/model/Quiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/web/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/web/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/web/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/web/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.app.web.EnglingoApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.app.web.EnglingoApplicationTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.app.web.EnglingoApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.app.web.EnglingoApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/web-0.0.1-SNAPSHOT.jar" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,18 +43,34 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="englingo" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="englingo" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
@@ -76,8 +87,17 @@
     </option>
   </component>
   <component name="ProjectId" id="1TkGBTlGSPlYciT590vxJYqdnVZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -94,18 +114,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="JUnit.EnglingoApplicationTests.contextLoads">
     <configuration name="EnglingoApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -134,8 +142,31 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.EnglingoApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.EnglingoApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:englingo" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:englingo" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@46682a49" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -156,6 +187,8 @@
       <workItem from="1574702558688" duration="3905000" />
       <workItem from="1574961386385" duration="2870000" />
       <workItem from="1574964404275" duration="1107000" />
+      <workItem from="1574966205768" duration="3943000" />
+      <workItem from="1575038685380" duration="1415000" />
     </task>
     <servers />
   </component>
@@ -174,5 +207,105 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Přidání repositories, services a entit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Přidání repositories, services a entit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="115" key="#Assign_Data_Sources" timestamp="1575040624673">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="115" key="#Assign_Data_Sources/0.0.1440.900@0.0.1440.900" timestamp="1575040624673" />
+    <state x="458" y="212" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1574981168221">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="212" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1574981168221" />
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575040490375">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1575040490375" />
+    <state x="533" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1575041177908">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1575041177908" />
+    <state x="12" y="54" key="CommitChangelistDialog2" timestamp="1574982954628">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="12" y="54" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1574982954628" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1574966265839">
+      <screen x="0" y="23" width="1440" height="820" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1574966243131" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.820@0.23.1440.820" timestamp="1574966265839" />
+    <state width="1398" height="282" key="GridCell.Tab.0.bottom" timestamp="1575195901666">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="282" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575195901666" />
+    <state width="1398" height="365" key="GridCell.Tab.0.bottom/0.23.1440.820@0.23.1440.820" timestamp="1575042639970" />
+    <state width="1398" height="282" key="GridCell.Tab.0.center" timestamp="1575195901664">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="282" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575195901664" />
+    <state width="1398" height="365" key="GridCell.Tab.0.center/0.23.1440.820@0.23.1440.820" timestamp="1575042639968" />
+    <state width="1398" height="282" key="GridCell.Tab.0.left" timestamp="1575195901663">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="282" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575195901663" />
+    <state width="1398" height="365" key="GridCell.Tab.0.left/0.23.1440.820@0.23.1440.820" timestamp="1575042639968" />
+    <state width="1398" height="282" key="GridCell.Tab.0.right" timestamp="1575195901665">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="282" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575195901665" />
+    <state width="1398" height="365" key="GridCell.Tab.0.right/0.23.1440.820@0.23.1440.820" timestamp="1575042639969" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1574982956948">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1574982956948" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1574982956947">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1574982956947" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1574982956946">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1574982956946" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1574982956948">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1574982956948" />
+    <state x="258" y="112" key="Maven.ArtifactSearchDialog" timestamp="1574979787918">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="258" y="112" key="Maven.ArtifactSearchDialog/0.0.1440.900@0.0.1440.900" timestamp="1574979787918" />
+    <state x="208" y="31" key="SettingsEditor" timestamp="1574982361624">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="208" y="31" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1574982361624" />
+    <state x="618" y="352" width="350" height="220" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1575041030326">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="618" y="352" width="350" height="220" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1440.900@0.0.1440.900" timestamp="1575041030326" />
+    <state x="486" y="285" width="467" height="326" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1575041097745">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="486" y="285" width="467" height="326" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1440.900@0.0.1440.900" timestamp="1575041097745" />
+    <state x="449" y="140" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1575041111217">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="449" y="140" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1575041111217" />
+    <state x="583" y="220" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1575040392562">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="583" y="220" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1440.900@0.0.1440.900" timestamp="1575040392562" />
+    <state x="397" y="266" key="com.intellij.ide.util.TipDialog" timestamp="1575038794844">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="397" y="266" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1575038794844" />
+    <state x="397" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.820@0.23.1440.820" timestamp="1574966206934" />
+    <state x="378" y="93" width="683" height="714" key="find.popup" timestamp="1575039450220">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="378" y="93" width="683" height="714" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1575039450220" />
   </component>
 </project>
