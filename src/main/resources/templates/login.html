@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Přihlášení</title>
+</head>
+<body>
+    <h1>Přihlášení</h1>
+
+    <form th:action="@{/login}" th:object="${loginForm}" method="post">
+        <label for="prihlasJmeno">Jméno</label>
+        <input type="text" id="prihlasJmeno" name="prihlasJmeno" autofocus="autofocus">Jméno</input>
+        <label for="heslo">Heslo</label>
+        <input type="text" id="heslo" name="heslo" autofocus="autofocus">Heslo</input>
+        </br>
+        <input type="submit" value="Přihlásit se">
+    </form>
+</body>
+</html>
