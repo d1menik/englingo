@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class UserController {
@@ -16,13 +17,17 @@ public class UserController {
     private UserService userService;
 
     @GetMapping(value = "/")
-    public String getHome(){
-        return "home";
+    public ModelAndView getHome(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("home");
+        return modelAndView;
     }
 
     @GetMapping(value = "/login")
-    public String getLoginForm(){
-        return "login";
+    public ModelAndView getLoginForm(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("login");
+        return modelAndView;
     }
 
     @PostMapping(value = "/login")
