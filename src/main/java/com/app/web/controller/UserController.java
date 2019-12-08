@@ -15,6 +15,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping(value = "/")
+    public String getHome(){
+        return "home";
+    }
+
     @GetMapping(value = "/login")
     public String getLoginForm(){
         return "login";
@@ -31,7 +36,6 @@ public class UserController {
 
         model.addAttribute("invalidCredentials", true);
         return "login";
-
     }
 
 }
