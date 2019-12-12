@@ -1,18 +1,6 @@
 version: '3.7'
 
 services:
-  app:
-    build: .
-    ports:
-      - "8800:8800"
-    restart: always
-    depends_on:
-      - mysql
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql/englingo
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
-
   mysql:
     image: mysql:latest
     ports:

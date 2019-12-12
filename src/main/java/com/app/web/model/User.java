@@ -1,32 +1,46 @@
 package com.app.web.model;
 
-
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "User")
-public class User implements Serializable {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_user")
-    private int idUser;
+    private int  idUser;
 
-    @Column(name = "jmeno")
-    private String jmeno;
-
-    @Column(name = "prijmeni")
-    private String prijmeni;
-
-    @Column(name = "vek")
-    private int vek;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "mail")
     private String email;
 
-    @Column(name = "heslo")
-    private String heslo;
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "roles")
+    private String role;
+
+    @Column(name = "active")
+    private boolean active;
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public int getIdUser() {
         return idUser;
@@ -36,12 +50,12 @@ public class User implements Serializable {
         this.idUser = id;
     }
 
-    public String getJmeno() {
-        return jmeno;
+    public String getUsername() {
+        return username;
     }
 
-    public User setJmeno(String name) {
-        this.jmeno = name;
+    public User setUsername(String name) {
+        this.username = name;
 
         return this;
     }
@@ -56,32 +70,14 @@ public class User implements Serializable {
         return this;
     }
 
-    public String getHeslo() {
-        return heslo;
+    public String getPassword() {
+        return password;
     }
 
-    public User setHeslo(String password) {
-        this.heslo = password;
+    public User setPassword(String password) {
+        this.password = password;
 
         return this;
-    }
-
-    public String getPrijmeni() {
-        return prijmeni;
-    }
-
-    public User setPrijmeni(String surname) {
-        this.prijmeni = surname;
-
-        return this;
-    }
-
-    public int getVek() {
-        return vek;
-    }
-
-    public void setVek(int vek) {
-        this.vek = vek;
     }
 
 }

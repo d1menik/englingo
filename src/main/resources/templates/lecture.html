@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>Lekce</title>
+</head>
+<body>
+<div layout:fragment="content">
+            <h1>Lekce</h1>
+
+
+    <p><a href="/" th:href="@{login}">Přihlásit se</a></p>
+    <p><a href="/" th:href="@{/}">Vrátit se na úvodní stránku</a></p>
+
+</div>
+</body>
+</html>
