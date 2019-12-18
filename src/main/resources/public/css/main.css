@@ -1,0 +1,17 @@
+body, html {
+    background-color: #FFFDF2;
+}
+
+.hero {
+    background: url(/image/hero1.png) center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.btn-primary {
+    background-color: #273ECC !important;
+}
+
+.bg-primary {
+    background-color: #273ECC !important;
+}
