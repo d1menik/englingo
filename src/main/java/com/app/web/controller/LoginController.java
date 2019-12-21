@@ -28,4 +28,11 @@ public class LoginController {
         return modelAndView;
     }
 
+    @GetMapping(value = "/admin")
+    public ModelAndView getAdmin(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("admin");
+        return modelAndView;
+    }
+
 }
