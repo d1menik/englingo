@@ -7,8 +7,9 @@
 </head>
 <body>
 <div layout:fragment="content">
+    <h1 class="text-center mt-md-3">Přehled a správa uživatelů</h1>
     <div>
-        Přidej nového uživatele
+        <a type="submit" th:href="@{/registration}" class="btn-primary col-sm-offset-3 btn-lg">Přidat uživatele</a>
     </div>
     <div class="p-4">
         <table class="table">
@@ -29,21 +30,21 @@
                     <td scope="col" th:text="${user.active}">...</td>
                     <td scope="col" th:text="${user.created}">...</td>
                 </tr>
-                <!--            <tr>-->
-                <!--                <th scope="row">1</th>-->
-                <!--                <td>Jan Novák</td>-->
-                <!--                <td>jan.novak@example.com</td>-->
-                <!--                <td>aktivní</td>-->
-                <!--                <td>14.5.2018</td>-->
-                <!--            </tr>-->
-                <!--            <tr>-->
-                <!--                <th scope="row">2</th>-->
-                <!--                <td>Tomáš Fuk</td>-->
-                <!--                <td>tomas.fuk@example.com</td>-->
-                <!--                <td>smazaný</td>-->
-                <!--                <td>19.4.2019</td>-->
-                <!--            </tr>-->
-                <!--            </tbody>-->
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Jan Novák</td>
+                                <td>jan.novak@example.com</td>
+                                <td>aktivní</td>
+                                <td>14.5.2018</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Tomáš Fuk</td>
+                                <td>tomas.fuk@example.com</td>
+                                <td>smazaný</td>
+                                <td>19.4.2019</td>
+                            </tr>
+                            </tbody>
             </th:block>
         </table>
     </div>

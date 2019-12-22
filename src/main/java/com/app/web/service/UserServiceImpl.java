@@ -27,6 +27,8 @@ public class UserServiceImpl implements UserService{
     }
 
     public User save(User user){
+        user.setActive(true);
+        user.setRole("USER");
         return userRepository.save(user);
     }
 
