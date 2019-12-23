@@ -14,6 +14,9 @@ public class Lecture {
     @Column(name = "jmeno")
     private String jmeno;
 
+    @Column(name = "picture_url")
+    private String pictureUrl;
+
     @Column(name = "pocet_testu")
     private int pocetTestu;
 
@@ -39,6 +42,14 @@ public class Lecture {
 
     public void setIdLecture(int id) {
         this.idLecture = id;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String url) {
+        this.pictureUrl = url;
     }
 
 }

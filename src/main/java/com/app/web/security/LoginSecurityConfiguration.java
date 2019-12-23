@@ -40,7 +40,7 @@ public class LoginSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/users").permitAll() //TODO: v prod nezapomenou smazat
                 .antMatchers("/image/**", "/css/**", "/js/**").permitAll()
-                .antMatchers("/lecture").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/lecture").permitAll() //hasAnyRole("ADMIN", "USER") TODO: zmenit pouze pro prihlasene
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

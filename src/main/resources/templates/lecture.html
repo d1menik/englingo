@@ -7,8 +7,81 @@
 </head>
 <body>
 <div layout:fragment="content">
-            <h1>Lekce</h1>
-
+    <h1 class="pt-3">Lekce</h1>
+    <div class="container">
+        <div class="row" th:each="lecture: ${lectures}">
+            <a style="display:block" th:href="@{/lectures/(id=${lecture.idLecture})}">
+                <div class="col-4 col-sm-3 m-3">
+                    <div class="lecture-image">
+                        <img th:attr="src=@{lecture.pictureUrl}">
+                    </div>
+                    <div class="p-1 lecture-text">
+                        <span th:text="${lecture.jmeno}">...</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!--            <a style="display:block" th:href="@{#}">-->
+        <!--                <div class="col-4 col-sm-3 m-3">-->
+        <!--                    <div class="lecture-image">-->
+        <!--                        <img src="/image/animals.png" alt="">-->
+        <!--                    </div>-->
+        <!--                    <div class="p-1 lecture-text">-->
+        <!--                        <span>Zvířata</span>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </a>-->
+        <!--            <a style="display:block" th:href="@{#}">-->
+        <!--                <div class="col-4 col-sm-3 m-3">-->
+        <!--                    <div class="lecture-image">-->
+        <!--                        <img src="/image/food.png" alt="">-->
+        <!--                    </div>-->
+        <!--                    <div class="p-1 lecture-text">-->
+        <!--                        <span>Jídlo</span>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </a>-->
+        <!--            <a style="display:block" th:href="@{#}">-->
+        <!--                <div class="col-4 col-sm-3 m-3">-->
+        <!--                    <div class="lecture-image">-->
+        <!--                        <img src="/image/holiday.png" alt="">-->
+        <!--                    </div>-->
+        <!--                    <div class="p-1 lecture-text">-->
+        <!--                        <span>Prázdniny</span>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </a>-->
+        <!--            <a style="display:block" th:href="@{#}">-->
+        <!--                <div class="col-4 col-sm-3 m-3">-->
+        <!--                    <div class="lecture-image">-->
+        <!--                        <img src="/image/sports.png" alt="">-->
+        <!--                    </div>-->
+        <!--                    <div class="p-1 lecture-text">-->
+        <!--                        <span>Sporty</span>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </a>-->
+        <!--            <a style="display:block" th:href="@{#}">-->
+        <!--                <div class="col-4 col-sm-3 m-3">-->
+        <!--                    <div class="lecture-image">-->
+        <!--                        <img src="/image/food.png" alt="">-->
+        <!--                    </div>-->
+        <!--                    <div class="p-1 lecture-text">-->
+        <!--                        <span>Jídlo</span>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </a>-->
+        <!--            <a style="display:block" th:href="@{#}">-->
+        <!--                <div class="col-4 col-sm-3 m-3">-->
+        <!--                    <div class="lecture-image">-->
+        <!--                        <img src="/image/food.png" alt="">-->
+        <!--                    </div>-->
+        <!--                    <div class="p-1 lecture-text">-->
+        <!--                        <span>Jídlo</span>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </a>-->
+    </div>
 </div>
 </body>
 </html>
