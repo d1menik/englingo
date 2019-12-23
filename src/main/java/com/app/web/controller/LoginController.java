@@ -26,7 +26,7 @@ public class LoginController {
     }
 
     @GetMapping(value = "/login")
-    public ModelAndView getLoginForm(){
+    public ModelAndView getLogin(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("login");
         return modelAndView;

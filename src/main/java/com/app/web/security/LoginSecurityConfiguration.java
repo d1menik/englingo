@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -28,7 +29,7 @@ public class LoginSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/resources/**");
+        web.ignoring().antMatchers("/resources/**", "/image/**", "/css/**", "/js/**");
     }
 
     @Override
@@ -38,14 +39,17 @@ public class LoginSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/home").permitAll()
                 .antMatchers("/registration").permitAll()
-                .antMatchers("/users").permitAll() //TODO: v prod nezapomenou smazat
-                .antMatchers("/image/**", "/css/**", "/js/**").permitAll()
-                .antMatchers("/lecture").permitAll() //hasAnyRole("ADMIN", "USER") TODO: zmenit pouze pro prihlasene
+                .antMatchers("/users").hasAuthority("ADMIN")
+                .antMatchers("/lecture").hasAnyAuthority("USER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login").successForwardUrl("/lecture")
-                .permitAll();
+                .loginPage("/login").successForwardUrl("/lecture").permitAll()
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .and().logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/").and().exceptionHandling();
     }
 
     @Bean
