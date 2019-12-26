@@ -1,33 +1,60 @@
 package com.app.web.model;
 
+import org.springframework.beans.support.MutableSortDefinition;
+import org.springframework.beans.support.PropertyComparator;
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
-@Table(name = "Role")
+@Table(name = "roles")
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_role")
-    private int idRole;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
 
-    @Column(name = "typ_role")
-    private String typRole;
+    @Column(name = "role_type")
+    private String roleType;
 
-    public String getTypRole() {
-        return typRole;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "role", fetch = FetchType.EAGER)
+    private Set<User> users;
+
+    public String getRoleType() {
+        return roleType;
     }
 
-    public void setTypRole(String typRole) {
-        this.typRole = typRole;
+    public void setRoleType(String roleType) {
+        this.roleType = roleType;
     }
 
     public int getIdRole() {
-        return idRole;
+        return id;
     }
 
     public void setIdRole(int id) {
-        this.idRole = id;
+        this.id = id;
     }
 
+    private Set<User> getUsersInternal() {
+        if (this.users == null) {
+            this.users = new HashSet<>();
+        }
+        return this.users;
+    }
+
+    protected void setUsersInternal(Set<User> users) {
+        this.users = users;
+    }
+
+    public List<User> getUsers() {
+        List<User> sortedUsers = new ArrayList<>(getUsersInternal());
+        PropertyComparator.sort(sortedUsers, new MutableSortDefinition("created", false, false));
+        return Collections.unmodifiableList(sortedUsers);
+    }
+
+    public void addUser(User user) {
+        getUsersInternal().add(user);
+        user.setRole(this);
+    }
 }

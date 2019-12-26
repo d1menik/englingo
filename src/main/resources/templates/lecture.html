@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="~{fragments/layout}">
 <head>
     <title>Lekce</title>
@@ -10,81 +9,18 @@
 <div layout:fragment="content">
     <h1 class="pt-3">Lekce</h1>
     <div class="container">
-        <div class="row" th:each="lecture: ${lectures}">
-            <a style="display:block" th:href="@{/lectures/(id=${lecture.idLecture})}">
+        <div class="row">
+            <a th:each="lecture: ${lectures}" style="display:block" th:href="@{/lectures(id=${lecture.id})}">
                 <div class="col-4 col-sm-3 m-3">
                     <div class="lecture-image">
-                        <img th:attr="src=@{lecture.pictureUrl}">
+                        <img th:attr="src=${lecture.pictureUrl}">
                     </div>
                     <div class="p-1 lecture-text">
-                        <span th:text="${lecture.jmeno}">...</span>
+                        <span th:text="${lecture.title}">...</span>
                     </div>
                 </div>
             </a>
         </div>
-        <div sec:authorize="hasAuthority('ADMIN')">
-            <a type="submit" th:href="@{/newlecture}" class="btn-primary col-sm-offset-3 btn-lg" >Přidat lekci</a>
-        </div>
-                    <a style="display:block" th:href="@{#}">
-                        <div class="col-4 col-sm-3 m-3">
-                            <div class="lecture-image">
-                                <img src="/image/animals.png" alt="">
-                            </div>
-                            <div class="p-1 lecture-text">
-                                <span>Zvířata</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a style="display:block" th:href="@{#}">
-                        <div class="col-4 col-sm-3 m-3">
-                            <div class="lecture-image">
-                                <img src="/image/food.png" alt="">
-                            </div>
-                            <div class="p-1 lecture-text">
-                                <span>Jídlo</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a style="display:block" th:href="@{#}">
-                        <div class="col-4 col-sm-3 m-3">
-                            <div class="lecture-image">
-                                <img src="/image/holiday.png" alt="">
-                            </div>
-                            <div class="p-1 lecture-text">
-                                <span>Prázdniny</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a style="display:block" th:href="@{#}">
-                        <div class="col-4 col-sm-3 m-3">
-                            <div class="lecture-image">
-                                <img src="/image/sports.png" alt="">
-                            </div>
-                            <div class="p-1 lecture-text">
-                                <span>Sporty</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a style="display:block" th:href="@{#}">
-                        <div class="col-4 col-sm-3 m-3">
-                            <div class="lecture-image">
-                                <img src="/image/food.png" alt="">
-                            </div>
-                            <div class="p-1 lecture-text">
-                                <span>Jídlo</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a style="display:block" th:href="@{#}">
-                        <div class="col-4 col-sm-3 m-3">
-                            <div class="lecture-image">
-                                <img src="/image/food.png" alt="">
-                            </div>
-                            <div class="p-1 lecture-text">
-                                <span>Jídlo</span>
-                            </div>
-                        </div>
-                    </a>
     </div>
 </div>
 </body>

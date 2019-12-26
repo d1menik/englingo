@@ -1,30 +1,50 @@
 package com.app.web.model;
 
 import javax.persistence.*;
+import java.util.*;
+
+import org.springframework.beans.support.MutableSortDefinition;
+import org.springframework.beans.support.PropertyComparator;
+import org.springframework.format.annotation.DateTimeFormat;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "User")
+@Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_user")
-    private int  idUser;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
 
     @Column(name = "username")
     private String username;
 
-    @Column(name = "mail")
+    @Column(name = "email")
     private String email;
 
     @Column(name = "password")
     private String password;
 
-    @Column(name = "roles")
-    private String role;
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     @Column(name = "active")
     private boolean active;
+
+    @Column(name = "created")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    private LocalDate created;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
+    private Set<Statistic> statistics;
 
     public boolean isActive() {
         return active;
@@ -34,20 +54,20 @@ public class User {
         this.active = active;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
     public int getIdUser() {
-        return idUser;
+        return id;
     }
 
     public void setIdUser(int id) {
-        this.idUser = id;
+        this.id = id;
     }
 
     public String getUsername() {
@@ -80,4 +100,49 @@ public class User {
         return this;
     }
 
+    public LocalDate getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDate created) {
+        this.created = created;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    private Set<Statistic> getStatisticsInternal() {
+        if (this.statistics == null) {
+            this.statistics = new HashSet<>();
+        }
+        return this.statistics;
+    }
+
+    protected void setStatisticsInternal(Set<Statistic> statistics) {
+        this.statistics = statistics;
+    }
+
+    public List<Statistic> getStatistics() {
+        List<Statistic> sortedStatistics = new ArrayList<>(getStatisticsInternal());
+        PropertyComparator.sort(sortedStatistics, new MutableSortDefinition("created", false, false));
+        return Collections.unmodifiableList(sortedStatistics);
+    }
+
+    public void addStatistic(Statistic statistic) {
+        getStatisticsInternal().add(statistic);
+        statistic.setUser(this);
+    }
 }

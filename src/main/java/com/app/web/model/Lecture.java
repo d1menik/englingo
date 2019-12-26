@@ -1,47 +1,43 @@
 package com.app.web.model;
 
+import org.springframework.beans.support.MutableSortDefinition;
+import org.springframework.beans.support.PropertyComparator;
+
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
-@Table(name = "Lecture")
+@Table(name = "lectures")
 public class Lecture {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_lecture")
-    private int idLecture;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
 
-    @Column(name = "jmeno")
-    private String jmeno;
+    @Column(name = "title")
+    private String title;
 
     @Column(name = "picture_url")
     private String pictureUrl;
 
-    @Column(name = "pocet_testu")
-    private int pocetTestu;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lecture")
+    private Set<Test> tests;
 
-    public int getPocetTestu() {
-        return pocetTestu;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPocetTestu(int pocetTestu) {
-        this.pocetTestu = pocetTestu;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getJmeno() {
-        return jmeno;
+    public int getId() {
+        return id;
     }
 
-    public void setJmeno(String jmeno) {
-        this.jmeno = jmeno;
-    }
-
-    public int getIdLecture() {
-        return idLecture;
-    }
-
-    public void setIdLecture(int id) {
-        this.idLecture = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPictureUrl() {
@@ -52,4 +48,25 @@ public class Lecture {
         this.pictureUrl = url;
     }
 
+    private Set<Test> getTestsInternal() {
+        if (this.tests == null) {
+            this.tests = new HashSet<>();
+        }
+        return this.tests;
+    }
+
+    protected void setTestsInternal(Set<Test> tests) {
+        this.tests = tests;
+    }
+
+    public List<Test> getTest() {
+        List<Test> sortedTests = new ArrayList<>(getTestsInternal());
+        PropertyComparator.sort(sortedTests, new MutableSortDefinition("title", false, false));
+        return Collections.unmodifiableList(sortedTests);
+    }
+
+    public void addTest(Test test) {
+        getTestsInternal().add(test);
+        test.setLecture(this);
+    }
 }

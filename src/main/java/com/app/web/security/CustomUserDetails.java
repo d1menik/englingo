@@ -24,7 +24,7 @@ public class CustomUserDetails implements UserDetails {
        this.username = user.getUsername();
        this.password = user.getPassword();
        this.active = user.isActive();
-       this.roles = Arrays.stream(user.getRole().split(",")).map(SimpleGrantedAuthority::new)
+       this.roles = Arrays.stream(user.getRole().getRoleType().split(",")).map(SimpleGrantedAuthority::new)
                .collect(Collectors.toList());
 
     }
