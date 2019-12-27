@@ -44,14 +44,14 @@ public class LoginController {
     @PostMapping(value="/registration")
     public ModelAndView addAStudent(@Valid User user, BindingResult bindingResult){
         ModelAndView modelAndView = new ModelAndView();
-        Optional<User> userExists = userService.findUserByName(user.getEmail());
+        Optional<User> userExists = userService.findUserByName(user.getUsername());
         if (userExists.isPresent()) {
             bindingResult
-                    .rejectValue("email", "error.user",
-                            "There is already a user registered with the email provided");
+                    .rejectValue("username", "error.user",
+                            "Existuje už uživatel se stejným uživatelským jménem");
         }
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("registration");
+            modelAndView.setViewName("error-registration");
         } else {
             userService.save(user);
             modelAndView.addObject("successMessage", "User has been registered successfully");

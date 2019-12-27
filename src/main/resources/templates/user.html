@@ -27,6 +27,10 @@
                 <td th:text="${user.email}">...</td>
                 <td th:text="${user.active} ? 'ACTIVE' : 'DELETED'">...</td>
                 <td th:text="${user.created}">...</td>
+                <td>
+                    <a th:href="@{/admin/user(user_id=${user.getIdUser()})}">Upravit</a>
+                    <a th:href="@{/admin/users(user_id=${user.getIdUser()})}">Smazat</a>
+                </td>
             </tr>
             </tbody>
         </table>
