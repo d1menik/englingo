@@ -23,3 +23,42 @@ ON DUPLICATE KEY UPDATE active     = VALUES(active),
                         password   = VALUES(password),
                         username   = VALUES(username),
                         role_id    = VALUES(role_id);
+
+INSERT INTO englingo.questions(id, correct_answer, lecture_id, title)
+VALUES (1, 0, 2, 'pes'),
+       (2, 1, 2, 'kočka'),
+       (3, 2, 2, 'pták'),
+       (4, 3, 2, 'lev'),
+       (5, 4, 2, 'králík')
+ON DUPLICATE KEY UPDATE correct_answer = VALUES(correct_answer),
+                        lecture_id     = VALUES(lecture_id),
+                        title          = VALUES(title);
+
+INSERT INTO englingo.question_choices(question_id, choices)
+VALUES (1, 'dog'),
+       (1, 'cat'),
+       (1, 'bird'),
+       (1, 'lion'),
+       (1, 'rabbit'),
+       (2, 'dog'),
+       (2, 'cat'),
+       (2, 'bird'),
+       (2, 'lion'),
+       (2, 'rabbit'),
+       (3, 'dog'),
+       (3, 'cat'),
+       (3, 'bird'),
+       (3, 'lion'),
+       (3, 'rabbit'),
+       (4, 'dog'),
+       (4, 'cat'),
+       (4, 'bird'),
+       (4, 'lion'),
+       (4, 'rabbit'),
+       (5, 'dog'),
+       (5, 'cat'),
+       (5, 'bird'),
+       (5, 'lion'),
+       (5, 'rabbit')
+ON DUPLICATE KEY UPDATE question_id = VALUES(question_id),
+                        choices     = VALUES(choices);

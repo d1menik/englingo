@@ -9,8 +9,8 @@
 <div layout:fragment="content">
     <h1 class="pt-3">Lekce</h1>
     <div class="container">
-        <div class="row">
-            <a th:each="lecture: ${lectures}" style="display:block" th:href="@{/lectures(id=${lecture.id})}">
+        <div class="row row-lecture">
+            <a th:each="lecture: ${lectures}" style="display:block" th:href="@{/lectures/{id}/test(id=${lecture.id})}">
                 <div class="col-4 col-sm-3 m-3">
                     <div class="lecture-image">
                         <img th:attr="src=${lecture.pictureUrl}">

@@ -35,11 +35,40 @@ body, html {
     width: 100%;
 }
 
-.row a {
+.row-lecture a {
     text-decoration: none;
     color: black;
 }
 
 .lecture-text span {
     font-size: larger;
+}
+
+h1 {
+    text-align: center;
+}
+
+#quiz {
+    text-indent: 10px;
+    display:none;
+}
+
+button {
+    position: relative;
+    float:right;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#prev {
+    display:none;
+}
+
+#start {
+    display:none;
+    width: 90px;
 }
