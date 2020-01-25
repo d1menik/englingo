@@ -9,12 +9,13 @@
 <div layout:fragment="content">
     <h1 class="text-center mt-md-3">Přehled a správa uživatelů</h1>
     <div>
-        <a type="submit" th:href="@{/registration}" class="btn-primary col-sm-offset-3 btn-lg">Přidat uživatele</a>
+        <a type="submit" th:href="@{/user/registration}" class="btn-primary col-sm-offset-3 btn-lg">Přidat uživatele</a>
     </div>
     <div class="p-4">
         <table class="table">
             <tr>
                 <th scope="col">Id</th>
+                <th scope="col">Username</th>
                 <th scope="col">Jméno</th>
                 <th scope="col">Email</th>
                 <th scope="col">Status</th>
@@ -23,13 +24,13 @@
             <tbody th:block th:each="user, iStat : ${users}">
             <tr>
                 <td th:text="${iStat.index + 1}">...</td>
+                <td th:text="${user.username}">...</td>
                 <td th:text="|${user.firstName} ${user.lastName}|">...</td>
                 <td th:text="${user.email}">...</td>
                 <td th:text="${user.active} ? 'ACTIVE' : 'DELETED'">...</td>
-                <td th:text="${user.created}">...</td>
                 <td>
-                    <a th:href="@{/admin/user(user_id=${user.getIdUser()})}">Upravit</a>
-                    <a th:href="@{/admin/users(user_id=${user.getIdUser()})}">Smazat</a>
+                    <a th:href="@{/user/user-edit(id=${user.idUser})}" class="btn-primary col-sm-offset-3 btn-lg">Upravit</a>
+                    <a th:href="@{/user/user-delete(id=${user.idUser})}" class="btn-primary col-sm-offset-3 btn-lg">Smazat</a>
                 </td>
             </tr>
             </tbody>

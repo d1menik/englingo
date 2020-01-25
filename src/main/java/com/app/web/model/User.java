@@ -1,12 +1,10 @@
 package com.app.web.model;
 
-import javax.persistence.*;
-import java.util.*;
-
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
-import org.springframework.format.annotation.DateTimeFormat;
-import java.time.LocalDate;
+
+import javax.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "users")
@@ -32,10 +30,6 @@ public class User {
 
     @Column(name = "active")
     private boolean active;
-
-    @Column(name = "created")
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
-    private LocalDate created;
 
     @Column(name = "first_name")
     private String firstName;
@@ -98,14 +92,6 @@ public class User {
         this.password = password;
 
         return this;
-    }
-
-    public LocalDate getCreated() {
-        return created;
-    }
-
-    public void setCreated(LocalDate created) {
-        this.created = created;
     }
 
     public String getFirstName() {

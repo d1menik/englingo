@@ -3,29 +3,22 @@
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{fragments/layout}">
 <head>
-    <title>Uprava</title>
+    <title>Přihlášení</title>
 </head>
 <body>
 <div layout:fragment="content">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h1>Registrace</h1>
-            <form th:action="@{/registration}" method="post" th:object="${user}">
-                <div th:if="${param.error}">
-                    <div class="alert alert-danger">
-                        Invalid credentials.
-                    </div>
-                </div>
+            <h1 class="pt-3">Přihlašovací stránka</h1>
+            <form th:action="@{/login}" th:method="post">
                 <div class="form-group">
-                    <label for="username" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Přihlašovací
-                        jméno:</label>
+                    <label for="username">Přihlašovácí jméno:</label>
                     <input type="text"
                            id="username"
                            name="username"
                            class="form-control"
                            autofocus="autofocus"
                            placeholder="Jméno"
-                           th:field="*{username}"
                            required>
                 </div>
                 <div class="form-group">
@@ -35,36 +28,24 @@
                            name="password"
                            class="form-control"
                            placeholder="Heslo"
-                           th:field="*{password}"
-                           required>
-                </div>
-                <div class="form-group">
-                    <label for="mail">Email:</label>
-                    <input type="text"
-                           id="mail"
-                           name="mail"
-                           class="form-control"
-                           th:field="*{email}"
-                           placeholder="Email"
                            required>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
                             <input type="submit"
-                                   name="registration-submit"
-                                   id="registration-submit"
+                                   name="login-submit"
+                                   id="login-submit"
                                    class="form-control btn btn-primary"
-                                   value="Registrovat"
-                                   th:href="@{/login}">
+                                   value="Přihlásit se"
+                                   th:href="@{/lecture}">
                         </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-
-    <p><a href="/" th:href="@{login}">Přihlásit se</a></p>
+    <p><a href="/" th:href="@{/user/registration}">Registrovat</a></p>
 
 </div>
 </body>

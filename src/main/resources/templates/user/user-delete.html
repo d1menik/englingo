@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>Smazání uživatele</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Přejete si smazat uživatele ?</h1>
+            <form th:action="@{/user/user-delete}" th:object="${user}" th:method="post">
+                <div class="form-group" hidden>
+                    <input type="text"
+                           name="id"
+                           class="form-control"
+                           th:field="*{idUser}">
+                </div>
+                <div class="form-group">
+                    <label th:text="*{username}">Uživatel: </label>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="hidden" name="id" th:value="${user.idUser}" />
+                            <input type="submit" value="Smazat" class="btn btn-danger" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

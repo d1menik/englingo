@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
     }
 
     public void delete(User user){
-        userRepository.delete(user);
+        userRepository.deleteById(user.getIdUser());
     }
 
     public User getOne(Integer id){

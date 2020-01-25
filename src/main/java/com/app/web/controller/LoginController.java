@@ -28,21 +28,21 @@ public class LoginController {
     @GetMapping(value = "/login")
     public ModelAndView getLogin(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("/user/login");
         return modelAndView;
     }
 
-    @GetMapping(value = "/registration")
+    @GetMapping(value = "/user/registration")
     public ModelAndView getRegForm(){
         ModelAndView modelAndView = new ModelAndView();
         User user = new User();
         modelAndView.addObject("user", user);
-        modelAndView.setViewName("registration");
+        modelAndView.setViewName("/user/registration");
         return modelAndView;
     }
 
-    @PostMapping(value="/registration")
-    public ModelAndView addAStudent(@Valid User user, BindingResult bindingResult){
+    @PostMapping(value="/user/registration")
+    public ModelAndView addUser(@Valid User user, BindingResult bindingResult){
         ModelAndView modelAndView = new ModelAndView();
         Optional<User> userExists = userService.findUserByName(user.getUsername());
         if (userExists.isPresent()) {
@@ -51,12 +51,11 @@ public class LoginController {
                             "Existuje už uživatel se stejným uživatelským jménem");
         }
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("error-registration");
+            modelAndView.setViewName("/error/error-registration");
         } else {
             userService.save(user);
-            modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
-            modelAndView.setViewName("login");
+            modelAndView.setViewName("/user/login");
         }
         return modelAndView;
     }
