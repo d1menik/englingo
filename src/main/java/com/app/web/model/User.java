@@ -1,7 +1,10 @@
 package com.app.web.model;
 
+import com.app.web.security.CustomUserDetails;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.*;
@@ -83,7 +86,6 @@ public class User {
 
         return this;
     }
-
     public String getPassword() {
         return password;
     }

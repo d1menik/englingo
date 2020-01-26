@@ -1,9 +1,10 @@
 $(function () {
     let questions = [];
-    $.when(getQuestions(), askQuestions())
+    let id = $("#id-val").val();
+
+    $.when(getQuestions())
 
     function getQuestions() {
-        let id = $("#id-val").val();
         if (id) {
             $.get(`http://localhost:8800/lectures/${id}/questions`, function (data) {
                 $.each(data, function (el, question) {
@@ -12,6 +13,7 @@ $(function () {
                         "choices": question.choices,
                         "correctAnswer": question.correctAnswer
                     })
+                    askQuestions()
                 })
             })
         }
@@ -145,6 +147,18 @@ $(function () {
 
             score.append('Odpověděl si správně ' + numCorrect + ' otázky z ' +
                 questions.length + '.');
+
+            var token = $("meta[name='_csrf']").attr("content");
+            $.ajax({
+                type: 'POST',
+                url: `http://localhost:8800/statistics?lectureId=${id}`,
+                headers: {"X-CSRF-TOKEN": token},
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    successRate: numCorrect / questions.length * 100,
+                }),
+            });
+
             return score;
         }
     }

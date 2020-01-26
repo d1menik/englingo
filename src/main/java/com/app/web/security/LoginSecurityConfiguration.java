@@ -46,6 +46,7 @@ public class LoginSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/error-delete").hasAnyAuthority("USER", "ADMIN")
                 .antMatchers("/error-registration").permitAll()
                 .antMatchers("/lectures").hasAnyAuthority("USER", "ADMIN")
+                .antMatchers("/statistics").hasAnyAuthority("USER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

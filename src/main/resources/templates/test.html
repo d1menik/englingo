@@ -7,6 +7,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" th:src="@{/js/test.js}"></script>
     <title>Test</title>
+    <meta th:name="${_csrf.parameterName}" th:content="${_csrf.token}"/>
 </head>
 <body>
 <div layout:fragment="content">

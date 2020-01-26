@@ -1,5 +1,6 @@
 package com.app.web.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -17,9 +18,10 @@ public class Statistic {
     @Column(name = "success_rate")
     private int successRate;
 
+    @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "test_id")
-    private Test test;
+    @JoinColumn(name = "lecture_id")
+    private Lecture lecture;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -45,12 +47,12 @@ public class Statistic {
         this.user = user;
     }
 
-    public Test getTest() {
-        return test;
+    public Lecture getLecture() {
+        return lecture;
     }
 
-    public void setTest(Test test) {
-        this.test = test;
+    public void setLecture(Lecture lecture) {
+        this.lecture = lecture;
     }
 
     public LocalDate getCreated() {
@@ -60,4 +62,13 @@ public class Statistic {
     public void setCreated(LocalDate date) {
         this.created = date;
     }
+
+    public void setSuccessRate(int rate) {
+        this.successRate = rate;
+    }
+
+    public int getSuccessRate() {
+        return this.successRate;
+    }
+
 }

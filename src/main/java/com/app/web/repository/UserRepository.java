@@ -16,6 +16,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(value = "SELECT u FROM User u WHERE u.username = :username")
     Optional<User> findUserByName(String username);
 
+    @Query(value = "SELECT u FROM User u WHERE u.username = :username")
+    User findUserByUsername(String username);
+
     @Override
     @Modifying
     @Query(value = "DELETE FROM User u WHERE u.id = :id")

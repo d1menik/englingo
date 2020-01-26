@@ -1,5 +1,6 @@
 package com.app.web.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 
@@ -21,8 +22,9 @@ public class Lecture {
     @Column(name = "picture_url")
     private String pictureUrl;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lecture")
-    private Set<Test> tests;
+    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lecture", fetch = FetchType.EAGER)
+    private Set<Statistic> statistics;
 
     public String getTitle() {
         return title;
@@ -44,25 +46,25 @@ public class Lecture {
         this.pictureUrl = url;
     }
 
-    private Set<Test> getTestsInternal() {
-        if (this.tests == null) {
-            this.tests = new HashSet<>();
+    private Set<Statistic> getStatisticsInternal() {
+        if (this.statistics == null) {
+            this.statistics = new HashSet<>();
         }
-        return this.tests;
+        return this.statistics;
     }
 
-    protected void setTestsInternal(Set<Test> tests) {
-        this.tests = tests;
+    protected void setStatisticsInternal(Set<Statistic> statistics) {
+        this.statistics = statistics;
     }
 
-    public List<Test> getTest() {
-        List<Test> sortedTests = new ArrayList<>(getTestsInternal());
-        PropertyComparator.sort(sortedTests, new MutableSortDefinition("title", false, false));
-        return Collections.unmodifiableList(sortedTests);
+    public List<Statistic> getStatistic() {
+        List<Statistic> sortedStatistics = new ArrayList<>(getStatisticsInternal());
+        PropertyComparator.sort(sortedStatistics, new MutableSortDefinition("title", false, false));
+        return Collections.unmodifiableList(sortedStatistics);
     }
 
-    public void addTest(Test test) {
-        getTestsInternal().add(test);
-        test.setLecture(this);
+    public void addStatistics(Statistic statistic) {
+        getStatisticsInternal().add(statistic);
+        statistic.setLecture(this);
     }
 }
