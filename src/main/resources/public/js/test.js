@@ -153,7 +153,7 @@ $(function () {
                 type: 'POST',
                 url: `http://localhost:8800/statistics?lectureId=${id}`,
                 headers: {"X-CSRF-TOKEN": token},
-                contentType: "application/json; charset=utf-8",
+                contentType: "application/json",
                 data: JSON.stringify({
                     successRate: numCorrect / questions.length * 100,
                 }),

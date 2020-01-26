@@ -1,6 +1,8 @@
 package com.app.web.model;
 
 import com.app.web.security.CustomUserDetails;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.security.core.GrantedAuthority;
@@ -27,6 +29,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
@@ -40,6 +43,7 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private Set<Statistic> statistics;
 

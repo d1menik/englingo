@@ -23,6 +23,7 @@ public class Statistic {
     @JoinColumn(name = "lecture_id")
     private Lecture lecture;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

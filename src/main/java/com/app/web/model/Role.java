@@ -1,5 +1,6 @@
 package com.app.web.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Role {
     @Column(name = "role_type")
     private String roleType;
 
+    @JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "role", fetch = FetchType.EAGER)
     private Set<User> users;
 
