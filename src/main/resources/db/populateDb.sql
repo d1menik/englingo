@@ -12,9 +12,9 @@ VALUES (1, 'ADMIN'),
 ON DUPLICATE KEY UPDATE role_type = VALUES(role_type);
 
 INSERT INTO englingo.users(id, active, email, first_name, last_name, password, username, role_id)
-VALUES (1, TRUE, '2019/12/10', 'tomas.fuk@email.com', 'Tomas', 'Fuk', 'heslo', 'tom', 2),
-       (2, TRUE, '2018/10/28', 'honza.novak@email.com', 'Honza', 'Novak', 'heslo', 'jenik', 2),
-       (3, TRUE, '2018/4/12', 'honza.admin@email.com', 'Honza', 'Admin', 'heslo', 'admin', 1)
+VALUES (1, TRUE,  'tomas.fuk@email.com', 'Tomas', 'Fuk', 'heslo', 'tom', 2),
+       (2, TRUE,  'honza.novak@email.com', 'Honza', 'Novak', 'heslo', 'jenik', 2),
+       (3, TRUE,  'honza.admin@email.com', 'Honza', 'Admin', 'heslo', 'admin', 1)
 ON DUPLICATE KEY UPDATE active     = VALUES(active),
                         email      = VALUES(email),
                         first_name = VALUES(first_name),
